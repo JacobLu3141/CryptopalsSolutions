@@ -2,7 +2,8 @@
 
 import base64
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+from S2_C9 import pad
+from S2_C15 import unpad
 from S1_C6 import getCode
 from S1_C7 import decrypt_aes_ecb
 

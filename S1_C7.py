@@ -1,6 +1,6 @@
 import base64
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import unpad
+from S2_C15 import unpad
 from S1_C6 import getCode
 
 def decrypt_aes_ecb(ciphertext, key):

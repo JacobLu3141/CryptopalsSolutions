@@ -52,12 +52,12 @@ def encryption_detection_oracle():
     correct_answer = mode_ciphertext[0]
     ciphertext = mode_ciphertext[1]
     my_guess = ciphertext[16:32] == ciphertext[32:48]
-    return(my_guess == correct_answer)
+    return(my_guess == (correct_answer == "ecb"))
 
 if __name__ == "__main__":
     works = True
     for i in range(100000):
-        if not (encryption_detection_oracle()[1]):
+        if not (encryption_detection_oracle()):
             works = False
             print(i)
     print(works)
