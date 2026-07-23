@@ -43,7 +43,7 @@ def getCode(fileName):
     return cat
         
 if __name__ == "__main__":
-    hexCat = base64.b64decode(getCode('S1_C6.txt')).hex()
+    hexCat = base64.b64decode(getCode('Data\S1_C6.txt')).hex()
     for i in range(2, 100):
         sum = 0
         for j in range(2875//i):

@@ -60,7 +60,7 @@ def decrypt_aes_cbc_yellow_sub(ciphertext):
     return plaintext
 
 if __name__ == "__main__":
-    b64 = getCode('S2_C10.txt')
+    b64 = getCode('Data\S2_C10.txt')
     text = base64.b64decode(b64)
     print(decrypt_aes_cbc_yellow_sub(text).decode('utf-8'))
     print(encrypt_aes_cbc_yellow_sub(decrypt_aes_cbc_yellow_sub(text)) == text)

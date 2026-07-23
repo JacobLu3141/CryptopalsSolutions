@@ -16,4 +16,4 @@ def decrypt_aes_ecb_yellow_sub(ciphertext):
     return decrypt_aes_ecb_unpadding(ciphertext, "YELLOW SUBMARINE".encode('utf-8'))
 
 if __name__ == "__main__":
-    print(decrypt_aes_ecb_yellow_sub(base64.b64decode(getCode('S1_C7.txt'))))
+    print(decrypt_aes_ecb_yellow_sub(base64.b64decode(getCode('Data\S1_C7.txt'))))
