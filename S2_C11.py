@@ -25,6 +25,12 @@ def encryption_oracle(plaintext):
     else:
         return encrypt_aes_ecb_padding(plaintext, key)
 
+def encryption_detection_oracle():
+    ciphertext = encryption_oracle("ABCDEFGHIJKLMNOPABCDEFGHIJKLMNOPABCDEFGHIJKLMNOP".encode('utf-8'))
+    ciphertext = ciphertext
+    my_guess = ciphertext[16:32] == ciphertext[32:48]
+    return(my_guess)
+
 # for testing
 def encryption_oracle_with_answer(plaintext):
     n1 = random.randint(5, 10)
@@ -40,14 +46,8 @@ def encryption_oracle_with_answer(plaintext):
     else:
         return ["ecb", encrypt_aes_ecb_padding(plaintext, key)]
 
-def encryption_detection_oracle():
-    ciphertext = encryption_oracle("ABCDEFGHIJKLMNOPABCDEFGHIJKLMNOPABCDEFGHIJKLMNOP".encode('utf-8'))
-    ciphertext = ciphertext
-    my_guess = ciphertext[16:32] == ciphertext[32:48]
-    return(my_guess)
-
 # for testing
-def encryption_detection_oracle():
+def encryption_detection_oracle_with_answer():
     mode_ciphertext = encryption_oracle_with_answer("ABCDEFGHIJKLMNOPABCDEFGHIJKLMNOPABCDEFGHIJKLMNOP".encode('utf-8'))
     correct_answer = mode_ciphertext[0]
     ciphertext = mode_ciphertext[1]
@@ -57,7 +57,7 @@ def encryption_detection_oracle():
 if __name__ == "__main__":
     works = True
     for i in range(100000):
-        if not (encryption_detection_oracle()):
+        if not (encryption_detection_oracle_with_answer()):
             works = False
             print(i)
     print(works)

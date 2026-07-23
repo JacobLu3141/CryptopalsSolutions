@@ -1,7 +1,7 @@
 # CBC bitflipping attacks
 
 import random
-from S2_C10 import xor, encrypt_aes_cbc, decrypt_aes_cbc
+from S2_C10 import encrypt_aes_cbc, decrypt_aes_cbc
 from S2_C11 import aes_key_generate
 
 random.seed(42)
@@ -29,11 +29,10 @@ def string_exists(ciphertext):
     plaintext = decrypt_aes_cbc(ciphertext, KEY, bytes([0]) * 16)
     return plaintext.find(";admin=true;".encode()) > -1
 
+# change the ';' and '=' characters to bitflip later
 def attack():
     ciphertext = encrypt_aes_cbc_prepend_append("jacob:admin<true".encode())
-    # print(ciphertext)
     ciphertext = ciphertext[:21] + bytes([ciphertext[21] ^ 1]) + ciphertext[22:27] + bytes([ciphertext[27] ^ 1]) + ciphertext[28:]
-    # print(ciphertext)
     print(string_exists(ciphertext))
     
 if __name__ == "__main__":

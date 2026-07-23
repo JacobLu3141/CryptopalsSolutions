@@ -1,7 +1,6 @@
 # Byte-at-a-time ECB decryption (Harder)
 
 import base64, random
-from S2_C9 import pad
 from S2_C10 import encrypt_aes_ecb, encrypt_aes_ecb_padding
 from S2_C11 import key_generate, aes_key_generate
 
@@ -40,6 +39,7 @@ def find_duplicates(ciphertext):
             return i
     return -1
 
+# find length of the prepended text
 def prepend_length():
     number_of_a = 47
     duplicates = True

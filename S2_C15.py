@@ -15,18 +15,23 @@ def unpad(string, block_size):
 
 if __name__ == "__main__":
     try:
-        print(unpad(b"ICE ICE BABY\x04\x04\x04\x04"))
+        print(unpad(b"ICE ICE BABY\x04\x04\x04\x04", 16))
     except Exception as e:
         print(e)
     try:
-        print(unpad(b"ICE ICE BABY\x05\x05\x05\x05"))
+        print(unpad(b"ICE ICE BABY\x05\x05\x05\x05", 16))
     except Exception as e:
         print(e)
     try:
-        print(unpad(b"ICE ICE BABY\x01\x02\x03\x04"))
+        print(unpad(b"ICE ICE BABY\x01\x02\x03\x04", 16))
     except Exception as e:
         print(e)
     try:
-        print(unpad(b"ICE ICE BABY\x04\x03\x02\x01"))
+        print(unpad(b"ICE ICE BABY\x04\x03\x02\x01", 16))
     except Exception as e:
         print(e)
+    try:
+        print(unpad(b"YELLOW SUBMARINE", 16))
+    except Exception as e:
+        print(e)
+    print(unpad(b"YELLOW SUBMARINE" + b"\x10" * 16, 16))

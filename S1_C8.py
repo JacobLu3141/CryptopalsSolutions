@@ -1,7 +1,7 @@
 # Detect AES in ECB mode
 
 def logic():
-    with open('Cryptopals\S1_C8.txt', 'r') as file:
+    with open('S1_C8.txt', 'r') as file:
         lineNum = 0
         while True:
             newline = file.readline()
