@@ -9,7 +9,7 @@ KEY = seeded_random.randbytes(16)
 
 def select():
     IV = random.randbytes(16)
-    with open("Data\S3_C17.txt") as file:
+    with open("Data\\S3_C17.txt") as file:
         strings = list(map(lambda line: base64.b64decode(line.strip()), file.readlines()))
         selected = random.choice(strings)
         ciphertext = encrypt_aes_cbc(selected, KEY, IV)

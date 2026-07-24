@@ -60,7 +60,7 @@ def decrypt_aes_cbc_yellow_sub(ciphertext):
     return plaintext
 
 if __name__ == "__main__":
-    b64 = getCode('Data\S2_C10.txt')
+    b64 = getCode('Data\\S2_C10.txt')
     text = base64.b64decode(b64)
     print(decrypt_aes_cbc_yellow_sub(text).decode('utf-8'))
     print(encrypt_aes_cbc_yellow_sub(decrypt_aes_cbc_yellow_sub(text)) == text)
@@ -81,3 +81,4 @@ m3 = c2 ^ dec(c3)
 
 # holy shit this was implementation and debugging hell
 # I will be shamelessly using chatgpt to debug errors from now on
+# never mind free gen ai sucks ass at debugging

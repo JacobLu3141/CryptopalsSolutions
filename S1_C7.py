@@ -1,3 +1,5 @@
+# AES in ECB mode
+
 import base64
 from Crypto.Cipher import AES
 from S2_C15 import unpad
@@ -16,4 +18,4 @@ def decrypt_aes_ecb_yellow_sub(ciphertext):
     return decrypt_aes_ecb_unpadding(ciphertext, "YELLOW SUBMARINE".encode('utf-8'))
 
 if __name__ == "__main__":
-    print(decrypt_aes_ecb_yellow_sub(base64.b64decode(getCode('Data\S1_C7.txt'))))
+    print(decrypt_aes_ecb_yellow_sub(base64.b64decode(getCode('Data\\S1_C7.txt'))))

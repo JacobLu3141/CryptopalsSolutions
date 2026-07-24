@@ -3,7 +3,7 @@
 from S1_C3 import hex_to_word
 
 def logic():
-    with open('Data\S1_C4.txt', 'r') as file:
+    with open('Data\\S1_C4.txt', 'r') as file:
         for line in file:
             first = True
             seen = []
