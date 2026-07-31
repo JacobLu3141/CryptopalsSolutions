@@ -12,10 +12,10 @@ def xor(a, b):
     res = bytes(a1 ^ b1 for a1, b1 in zip(a, b))
     return res
 
-def repxor(bytes, rep):
+def repxor(text, rep):
     string = b''
-    for i in range(len(bytes)):
-        string += xor(bytes[i], rep[i % len(rep)])
+    for i in range(len(text)):
+        string += xor(bytes([text[i]]), bytes([rep[i % len(rep)]]))
     return string
 
 def encrypt_aes_ecb(plaintext, key):

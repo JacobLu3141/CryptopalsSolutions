@@ -2,7 +2,7 @@
 
 import base64, random
 from S2_C10 import xor
-from S3_C18 import encrypt_decrypt_ctr
+from S3_C18 import ctr_encrypt_decrypt
 
 random.seed(42)
 KEY = random.randbytes(16)
@@ -11,7 +11,7 @@ ciphertexts = []
 over_32_bytes = []
 
 with open("Data\\S3_C19.txt") as file:
-    ciphertexts = list(map(lambda line: encrypt_decrypt_ctr(base64.b64decode(line.strip()), KEY, 0), file.readlines()))
+    ciphertexts = list(map(lambda line: ctr_encrypt_decrypt(base64.b64decode(line.strip()), KEY, 0), file.readlines()))
 
 for i in range(len(ciphertexts)):
     if len(ciphertexts[i]) >= 32:
