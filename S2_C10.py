@@ -78,7 +78,3 @@ m1 = iv ^ dec(c1)
 m2 = c1 ^ dec(c2)
 m3 = c2 ^ dec(c3)
 '''
-
-# holy shit this was implementation and debugging hell
-# I will be shamelessly using chatgpt to debug errors from now on
-# never mind free gen ai sucks ass at debugging
